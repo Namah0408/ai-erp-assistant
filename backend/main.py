@@ -7,7 +7,8 @@ from app.api import (
     inventory,
     invoices,
     procurement,
-    chat
+    chat,
+    knowledge
 )
 
 
@@ -41,3 +42,4 @@ app.include_router(inventory.router)
 app.include_router(invoices.router)
 app.include_router(procurement.router)
 app.include_router(chat.router)
+app.include_router(knowledge.router)
