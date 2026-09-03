@@ -1,8 +1,13 @@
 from fastapi import APIRouter
 from pydantic import BaseModel
 
-from app.ai.llm import llm_with_tools, tools
-from app.ai.prompts import chat_prompt
+from langchain_core.messages import (
+    HumanMessage
+)
+
+from app.graph.workflow import (
+    erp_graph
+)
 
 
 router = APIRouter(
@@ -12,59 +17,90 @@ router = APIRouter(
 
 
 class ChatRequest(BaseModel):
+
     question: str
+
+    thread_id: str
 
 
 @router.post("/")
-def chat(request: ChatRequest):
+def chat(
+    request: ChatRequest
+):
 
-    messages = chat_prompt.format_messages(
-        question=request.question
+    config = {
+        "configurable": {
+            "thread_id":
+            request.thread_id
+        }
+    }
+
+    result = erp_graph.invoke(
+        {
+            "messages": [
+                HumanMessage(
+                    content=request.question
+                )
+            ]
+        },
+        config=config
     )
 
-    # Ask the LLM what to do
-    response = llm_with_tools.invoke(messages)
+    final_message = (
+        result["messages"][-1]
+    )
 
-    # Check whether the LLM wants to use a tool
-    if response.tool_calls:
-
-        for tool_call in response.tool_calls:
-
-            tool_name = tool_call["name"]
-            tool_args = tool_call["args"]
-
-            selected_tool = next(
-                (
-                    tool
-                    for tool in tools
-                    if tool.name == tool_name
-                ),
-                None
-            )
-
-            if selected_tool is None:
-                continue
-
-            tool_result = selected_tool.invoke(tool_args)
-
-            messages.append(response)
-
-            messages.append({
-                "role": "tool",
-                "tool_call_id": tool_call["id"],
-                "content": str(tool_result)
-            })
-
-        # Ask LLM to turn the database result into a useful answer
-        final_response = llm_with_tools.invoke(messages)
-
-        return {
-            "question": request.question,
-            "answer": final_response.content
-        }
-
-    # No tool required
     return {
-        "question": request.question,
-        "answer": response.content
+        "thread_id":
+        request.thread_id,
+
+        "question":
+        request.question,
+
+        "answer":
+        final_message.content
+    }
+
+
+@router.get(
+    "/history/{thread_id}"
+)
+def get_chat_history(
+    thread_id: str
+):
+
+    config = {
+        "configurable": {
+            "thread_id":
+            thread_id
+        }
+    }
+
+    state = erp_graph.get_state(
+        config
+    )
+
+    messages = state.values.get(
+        "messages",
+        []
+    )
+
+    history = []
+
+    for message in messages:
+
+        if message.type not in [
+            "human",
+            "ai"
+        ]:
+            continue
+
+        history.append({
+            "role": message.type,
+            "content": message.content
+        })
+
+    return {
+        "thread_id": thread_id,
+        "history": history
     }
