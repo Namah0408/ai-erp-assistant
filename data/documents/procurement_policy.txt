@@ -1,0 +1,42 @@
+NOVATECH INDUSTRIES
+PROCUREMENT POLICY
+
+1. PURCHASE REQUESTS
+
+Employees requiring goods or services for official purposes must raise a purchase request through the ERP procurement module.
+
+The request should contain the product or service description, required quantity, estimated cost, business justification, and preferred delivery date.
+
+2. PURCHASE APPROVAL
+
+Purchase requests below INR 25,000 require approval from the department manager.
+
+Purchases between INR 25,000 and INR 100,000 require approval from both the department manager and procurement manager.
+
+Purchases above INR 100,000 require approval from the finance head in addition to department and procurement approval.
+
+3. VENDOR SELECTION
+
+For purchases exceeding INR 50,000, procurement should normally obtain quotations from at least three eligible vendors.
+
+Vendor selection should consider price, product quality, delivery performance, warranty, service quality, and previous vendor performance.
+
+4. PURCHASE ORDERS
+
+Approved procurement requests must be converted into purchase orders before goods or services are ordered.
+
+Every purchase order must contain a unique purchase order number.
+
+Purchase orders must specify the vendor, goods or services, quantity, agreed price, delivery details, and payment terms.
+
+5. EMERGENCY PROCUREMENT
+
+Emergency purchases may follow an expedited approval process when delaying the purchase could disrupt essential business operations.
+
+The reason for emergency procurement must be documented in the ERP system.
+
+6. CONFLICT OF INTEREST
+
+Employees involved in procurement must disclose personal or financial relationships with vendors.
+
+Employees must not accept unauthorized gifts or financial benefits from suppliers.

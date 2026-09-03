@@ -1,0 +1,38 @@
+NOVATECH INDUSTRIES
+INVENTORY MANAGEMENT POLICY
+
+1. INVENTORY RECORDING
+
+All inventory items purchased by NovaTech Industries must be recorded in the ERP inventory management system.
+
+Each product should have a unique product code, product description, category, supplier information, quantity, price, and reorder level.
+
+2. STOCK MONITORING
+
+Inventory quantities should be updated whenever stock is received, issued, returned, damaged, or otherwise adjusted.
+
+Department managers are responsible for reporting inventory discrepancies.
+
+3. REORDER LEVEL
+
+Every regularly consumed inventory item should have a defined reorder level.
+
+When the available stock quantity reaches or falls below the reorder level, procurement should evaluate whether a new purchase order is required.
+
+4. STOCK VERIFICATION
+
+Physical stock verification should be conducted at least once every quarter.
+
+Differences between physical inventory and ERP inventory records must be investigated.
+
+5. DAMAGED GOODS
+
+Damaged or unusable goods should be identified separately and should not be included in usable stock quantities.
+
+Disposal of damaged goods requires appropriate departmental approval.
+
+6. INVENTORY SECURITY
+
+Access to high-value inventory storage areas should be restricted to authorized personnel.
+
+Inventory movements involving high-value items must be properly documented.

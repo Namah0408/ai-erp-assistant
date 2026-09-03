@@ -21,3 +21,5 @@ build/
 
 # IDE
 .vscode/
+
+data/chroma_db/
