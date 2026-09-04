@@ -12,10 +12,10 @@ function Sidebar() {
       {/* Logo */}
       <div className="p-4 border-b border-gray-700">
         <h1 className="text-lg font-semibold">
-          ✦ ERP Assistant
+          {/*✦*/} ERP Assistant
         </h1>
         <p className="text-xs text-gray-400 mt-1">
-          NovaTech Industries
+          Lighthouse Infosystems
         </p>
       </div>
 

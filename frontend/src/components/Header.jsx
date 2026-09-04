@@ -16,7 +16,7 @@ function Header() {
           </h2>
 
           <p className="text-xs text-gray-500">
-            NovaTech Industries
+            Lighthouse Infosystems
           </p>
         </div>
 
