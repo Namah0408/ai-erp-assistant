@@ -1,29 +1,26 @@
-import { Bot } from "lucide-react";
-
 function Header() {
   return (
-    <header className="h-16 border-b border-gray-200 flex items-center px-6 bg-white">
+    <header className="h-16 border-b border-gray-200 flex items-center px-4 sm:px-6 flex-shrink-0 bg-white">
 
-      <div className="flex items-center gap-3">
+      <div className="flex-1">
 
-        <div className="w-9 h-9 rounded-full bg-gray-900 text-white flex items-center justify-center">
-          <Bot size={20} />
-        </div>
+        <h2 className="text-sm font-semibold text-gray-900">
+          AI ERP Assistant
+        </h2>
 
-        <div>
-          <h2 className="font-semibold text-gray-900">
-            AI ERP Assistant
-          </h2>
+        <p className="text-xs text-gray-500 hidden sm:block">
+          Ask questions about Lighthouse Infosystems
+        </p>
 
-          <p className="text-xs text-gray-500">
-            Lighthouse Infosystems
-          </p>
-        </div>
+      </div>
 
+      <div className="text-xs text-gray-400">
+        AI Assistant
       </div>
 
     </header>
   );
 }
+
 
 export default Header;
